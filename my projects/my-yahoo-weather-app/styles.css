@@ -1,0 +1,96 @@
+  div.panel * {
+    box-sizing: border-box;
+  }
+
+  select {margin: 5px;}
+
+ 
+
+	  div.panel {border: 2px solid lavender;
+	             border-radius: 6px;
+	             margin: 5px;
+                 font-size: 30px;
+                 max-height: 480px;
+                 max-width: 852px;
+                 font-family: Arial, Helvetica, sans-serif;
+               /* color: DodgerBlue ;*/
+                color: white;
+                background-image: url("sky.jpg");
+                background-repeat: no-repeat;
+               /* position: absolute; */
+               /* overflow: hidden; */
+	            }
+
+
+
+     .mobile div {border: 2px solid lavender;
+              	             border-radius: 6px;
+              	             margin: 5px;
+                             font-size: 30px;
+                             font-family: Arial, Helvetica, sans-serif;
+                             display: none;
+
+              	            }
+
+	  div.temperature{display: inline;
+
+    }
+
+    div.result{font-size:60px;
+               position: absolute;
+              }
+
+	  div.result, div.humidity, div.description {margin: 10px;
+                                                opacity: 0.7;
+                                              }
+
+	  div.panel footer  {border-top: 2px solid lavender; }
+
+
+
+	  img.logo {display: block;
+                margin-left: auto;
+                margin-right: auto;
+	      }
+
+    img {   display: block;
+            margin-left: auto;
+            margin-right: 8%;
+            opacity: 0.4;
+           }
+
+
+    .col-container {
+            display: table;
+            max-width: 852px;
+            height: 150px;
+            margin: 5px;
+
+       }
+
+    .col-container div {
+           display: table-cell;
+           border: 2px solid lavender;
+           border-radius: 6px;
+           font-size: 30px;
+           padding-right: 10px;
+           height: 100%;
+           width: 284px;
+           font-family: Arial, Helvetica, sans-serif;
+       }
+
+
+
+    @media only screen and (max-width:620px) {
+    /* For mobile phones: */
+      div.panel {
+                  width:100%;
+                }
+      .mobile div {
+                    width:100%;
+                    height: 150px;
+                    display: block;
+                }
+
+      .col-container div {display: none;}
+      }

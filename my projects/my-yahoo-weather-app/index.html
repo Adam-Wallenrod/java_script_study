@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahoo! Weather</title>
+
+    <link rel="stylesheet" href="styles.css"> 
+
+</head>
+    <body>
+
+       <label><h2>Select city:</h2></label>
+       <select name="city" class="city" onchange = "getForecast(this.value)">
+         <option value="Krakow">Krakow</option>
+         <option value="Jaworzno">Jaworzno</option>
+         <option value="Jaroslaw">Jaroslaw</option>
+         <option value="Warszawa">Warszawa</option>
+       </select>
+
+	   
+	  
+	   
+        <div class="panel"> 
+          <div class="humidity"></div>
+
+          <div class="result">
+		     <div class="temperature"></div>&deg;C 
+		  </div> 
+
+          <div class="image"><div class="old"><img src="hourglass.png" style="width:100px;height:100px;"></div></div> 
+
+          <div class="description"></div>  
+          
+		  <footer><div><img class="logo" src="https://poweredby.yahoo.com/purple.png"/></div></footer> 
+		</div> 
+
+		
+		
+        <div class="mobile"> 
+        <div class="Day1">Day1</div> 
+        <div class="Day2">Day2</div> 
+        <div class="Day3">Day3</div> 
+        </div> 
+
+        <div class="col-container"> 
+        <div class="Day1">Day1</div> 
+        <div class="Day2">Day2</div> 
+        <div class="Day3">Day3</div> 
+        </div>
+
+
+
+
+
+        <script src="main.js"></script>
+		
+	</body>
+</html>
