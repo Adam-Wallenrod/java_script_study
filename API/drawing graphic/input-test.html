@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Input test</title>
+
+  </head>
+  
+  <body>
+  <h2>Test Test Test</h2>
+  
+  <div class="toolbar">
+    <input type="color" aria-label="select color of canvas">
+  </div>
+  
+  <button class="default">Default Color</button>
+  
+  <canvas>
+    <p>Your browser does not support canvas element. Poor you!</p>
+  </canvas>	
+	
+  
+  
+  </body>
+
+  <script>
+  var canvas = document.querySelector('canvas');
+  var width = canvas.width = window.innerWidth;
+  var height = canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+  
+  
+ // ctx.fillStyle = 'rgb(0,0,0)';
+ // ctx.fillRect(0,0,width,height);
+  
+  var colorPicker = document.querySelector('input[type="color"]');
+  var btn = document.querySelector('.default');
+  
+ // colorPicker.addEventListener("change", fillBackground, false);
+ colorPicker.addEventListener("input",fillBackground, false);
+  
+  btn.onclick = function() {
+     ctx.fillStyle = 'rgb(255,0,0)';
+     ctx.fillRect(0,0,width,height);
+  }
+  
+  
+  function fillBackground() {
+    ctx.fillStyle = colorPicker.value;
+	ctx.fillRect(0,0,width,height);
+  };
+  
+  function defaultColor() {
+    ctx.fillStyle = 'rgb(0,0,0)';
+    ctx.fillRect(0,0,width,height);
+  }
+  
+  </script>
+  
+</html>
