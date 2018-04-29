@@ -2,14 +2,20 @@
 
 var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
+<<<<<<< HEAD
 var textCounter = document.querySelector('p');
+=======
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
 
 var width = canvas.width = window.innerWidth;
 var height = canvas.height = window.innerHeight;
 
+<<<<<<< HEAD
 var Counter = 0;
 
 
+=======
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
 // function to generate random number
 
 function random(min,max) {
@@ -37,6 +43,7 @@ function Ball (x, y, velX, velY, color, size, exists) {
 }
 
 Ball.prototype.draw = function() {
+<<<<<<< HEAD
     if (this.exists != false) {
     ctx.beginPath();
     ctx.fillStyle = this.color;
@@ -52,6 +59,12 @@ Ball.prototype.draw = function() {
     ctx.fill();
     }	
 		
+=======
+  ctx.beginPath();
+  ctx.fillStyle = this.color;
+  ctx.arc(this.x, this.y, this.size, 0, 2*Math.PI);
+  ctx.fill();
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
 }
 
 Ball.prototype.update = function() {
@@ -92,6 +105,7 @@ Ball.prototype.collisionDetect = function() {
 
 
 ///EvilCircle() constructor definition
+<<<<<<< HEAD
 function EvilCircle(x, y, velX, velY, exists, color, size) {
 
   Shape.call(this, x, y, exists);
@@ -103,6 +117,17 @@ function EvilCircle(x, y, velX, velY, exists, color, size) {
   this.size = 10;
   this.exists = true;
  
+=======
+//function EvilCircle(x, y, color, size, velX, velY, exists) {
+function EvilCircle(x, y, velX, velY, color, size, exists) {
+
+  Shape.call(this, x, y, exists);
+
+  this.color = 'white';
+  this.size = 10;
+  this.velX = 20;
+  this.velY = 20;
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
 
 }
 
@@ -142,6 +167,7 @@ EvilCircle.prototype.checkBounds = function() {
 EvilCircle.prototype.setControls = function() {
   var _this = this;
   window.onkeydown = function(e) {
+<<<<<<< HEAD
     if (e.keyCode === 37) {
       _this.x -= _this.velX;
     } else if (e.keyCode === 39) {
@@ -149,12 +175,22 @@ EvilCircle.prototype.setControls = function() {
     } else if (e.keyCode === 38) {
       _this.y -= _this.velY;
     } else if (e.keyCode === 40) {
+=======
+    if (e.keyCode === 65) {
+      _this.x -= _this.velX;
+    } else if (e.keyCode === 68) {
+      _this.x += _this.velX;
+    } else if (e.keyCode === 87) {
+      _this.y -= _this.velY;
+    } else if (e.keyCode === 83) {
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
       _this.y += _this.velY;
     }
   }
 
 }
 
+<<<<<<< HEAD
 EvilCircle.prototype.collisionDetect = function() {
 	for (var j = 0; j < balls.length; j++) {
     if (balls[j].exists != false) {
@@ -173,10 +209,13 @@ EvilCircle.prototype.collisionDetect = function() {
 	
 }
 
+=======
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
 
 ///Loop
 
 var balls = [];
+<<<<<<< HEAD
 //function EvilCircle(x, y, velX, velY, exists, color, size)
 var zly = new EvilCircle(0,0, 20, 20, true, 'white', 10);
 //alert('ZLY   x = ' + zly.x + '  y = ' + zly.y + '  velX = ' + zly.velX + '  velY = ' + zly.velY + '  exists = ' + zly.exists + '  color = ' + zly.color + '  size = ' + zly.size);
@@ -191,6 +230,16 @@ function loop() {
   
    
   while (balls.length < 5) {
+=======
+var zly = new EvilCircle(0,0,this,this,this,this,true);
+zly.setControls();
+
+function loop() {
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+  ctx.fillRect(0, 0, width, height);
+
+  while (balls.length < 7) {
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
     var ball = new Ball(
       random(0,width),
       random(0,height),
@@ -200,7 +249,10 @@ function loop() {
       random(10,20),
       true
   );
+<<<<<<< HEAD
   
+=======
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
   balls.push(ball);
   }
 
@@ -208,15 +260,24 @@ function loop() {
     balls[i].draw();
     balls[i].update();
     balls[i].collisionDetect();
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
     }
    
   zly.draw();
   zly.checkBounds();
+<<<<<<< HEAD
   zly.collisionDetect();
   textCounter.textContent = "Licznik: " + Counter;
   requestAnimationFrame(loop);
  
 }
  
+=======
+  requestAnimationFrame(loop);
+}
+
+>>>>>>> 441a7aee4d2d4781ad93eefcc9dff4e84d0bdd9f
 loop();
