@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>map() method</title>
+  </head>
+
+  <body>
+  
+    <h1>Map() method example</h1>
+	
+    <article>
+	  
+	  <p>See console</p>
+    
+    </article>	
+  
+    
+  </body>
+
+    <script>
+     var liczby = [1, 2, 3 , 4, 5];
+	 
+	 function razyDwa(tablica) {
+	    return tablica.map( function(x) {
+		  return x*2});
+	 }
+	 
+	 var podwojenia = razyDwa(liczby);
+	 
+	 console.log(liczby);
+	 console.log(podwojenia);
+	 
+	 
+	 var potrojenia = liczby.map(function(x) {return x*3});
+     console.log(potrojenia);	  
+    </script>	
+	
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New things in ECMAScript6</title>
+  </head>
+
+  <body>
+  
+    <h1>New features in ECMAScript6</h1>
+	
+    <article>
+	  <ol>
+	    <li>Wprowadzenie nowych słów kluczowych: class, constructor, extends, super </li>
+        <li>Wprowadzenie array function expression =></li>
+		<li>Wprowadzenie nowego słowa kluczowego: let</li>
+		<li>Wprowadzenie koncepcji modułów</li>
+		<li>Wprowadzenie obiektów typu Promise</li>
+	 
+	  </ol> 
+    </article>	
+  
+    
+  </body>
+  
+     <!-- <script src="main.js" type="module"></script>  -->
+
+    <script>
+	
+	
+	
+	//classes, constructor, extends, super
+      class Car {
+        constructor(name){
+		  this.name = name;
+		}
+    }      
+	
+	class FamilyCar extends Car {
+	  constructor(name, maxSpeed){
+	    super(name);
+		this.maxSpeed = maxSpeed;
+	  }
+	}
+	
+	var familyCar = new FamilyCar('Saab', 220);
+	
+	console.log(familyCar.name);
+	console.log(familyCar.maxSpeed);
+    
+     
+	// array function expression
+    var result;
+    var liczby = [1,4, 9, 16];
+
+    var pierwiastki = liczby.map(x => Math.sqrt(x));	
+	
+	console.log(liczby);
+	console.log(pierwiastki);
+   
+/*   
+    setTimeout(() => {
+       result = "Pierwiastki: " + pierwiastki;
+	   console.log(result);
+    },5000);
+*/	
+	
+	
+	//new keyword - let
+	var num = 0;
+	
+	if(num===0){
+	  let inScopeTemp = 2;
+	  var globalTemp = 3;
+
+      for(let i = 0; i < 1; i++){
+        console.log("Pętla for");
+		console.log("typeof i: " + typeof i);
+        num += (inScopeTemp + globalTemp);		
+      }	  
+	  console.log("typeof i: " + typeof i);
+	}
+    
+	console.log("typeof num: " + typeof num);
+   	console.log("typeof inScopeTemp: " + typeof inScopeTemp);
+	console.log("typeof globalTemp: " + typeof globalTemp);
+	
+	
+	//Promise
+	//function msgAfterTimeout (msg, who, timeout) { return new Promise((resolve, reject) => { setTimeout(() => resolve(`${msg} Hello ${who}!`), timeout); }); }
+
+	//msgAfterTimeout("oOo", "Foo", 5000).then((msg) => msgAfterTimeout(msg, "Bar", 2000) ).then((msg) => { console.log(`done after 7s:${msg}`); });
+	
+	function doSomething() {
+	  return new Promise((resolve,reject)=> {setTimeout(() => 
+	    {
+	      console.log("robię coś...");
+	      resolve();
+	    }, 2000);
+	  } );
+	}
+	
+	doSomething().then(() => { console.log("i  robię jeszcze to")});
+	
+	
+    </script>	
+	
+</html>
