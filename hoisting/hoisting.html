@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+	<title>Hoisting</title>
+	<link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    <p>Hoisting example</p>
+  
+    
+	<script>
+	  var myVar = 'my value';
+	  
+	  
+	  (function() {
+	    //var myVar = 'this is function local value';  // declaration and initialization are done at the same time at the top so alert will display a string
+	    alert(myVar);
+		var myVar = 'this is function local value';  //declaration will be hoisted to the top, so the result will be undefined
+	  })();
+	</script>
+	
+  </body>
+
+</html>
